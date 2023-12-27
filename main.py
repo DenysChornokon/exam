@@ -1,24 +1,12 @@
-def nth_term(a, d, n):
+class ArithmeticProgression:
 
-    if n < 1:
-        raise ValueError("Номер члена повинен бути не менше 1")
-    if d == 0:
-        raise ValueError("Постійний для послідовності не повинен дорівнювати 0")
+    def __init__(self, a, d):
+        self.a = a
+        self.d = d
 
-    return a + (n - 1) * d
+    def nth_term(self, n):
 
+        if n < 1:
+            raise ValueError("Номер члена повинен бути не менше 1")
 
-def main():
-
-    a = 5
-    d = 3
-    n = 5
-
-    try:
-        print(nth_term(a, d, n))
-    except ValueError as e:
-        print(e)
-
-
-if __name__ == "__main__":
-    main()
+        return self.a + (n - 1) * self.d
